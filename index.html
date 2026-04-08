@@ -9,84 +9,109 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body {
+
+/* RESET PROFISSIONAL */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
   font-family: 'Poppins', sans-serif;
   background: #0b1c3d;
   color: #fff;
 }
 
-/* CONTAINER PADRÃO */
+/* CONTAINER */
 .container {
+  max-width: 500px;
+  margin: auto;
   padding: 20px;
 }
 
 /* HERO */
 .hero {
   text-align: center;
-  padding-top: 30px;
+  margin-top: 20px;
 }
 
 .hero img {
-  width: 120px;
+  width: 110px;
   border-radius: 50%;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  border: 3px solid #ffd700;
 }
 
 .hero h1 {
   font-size: 24px;
+  font-weight: 600;
 }
 
 .hero p {
-  font-size: 18px;
   color: #ffd700;
-  margin: 10px 0;
+  font-size: 18px;
+  margin-top: 5px;
 }
 
 /* BOTÃO */
 .btn {
   display: block;
   width: 100%;
-  background: #ffd700;
+  background: linear-gradient(45deg, #ffd700, #ffcc00);
   color: #0b1c3d;
+  padding: 14px;
   text-align: center;
-  padding: 15px;
   border-radius: 8px;
-  font-weight: bold;
+  font-weight: 600;
   text-decoration: none;
   margin-top: 15px;
+  transition: 0.3s;
+}
+
+.btn:active {
+  transform: scale(0.97);
 }
 
 /* BENEFÍCIOS */
 .benefits {
-  margin-top: 30px;
+  margin-top: 25px;
 }
 
 .benefit {
   background: #112a5c;
-  padding: 15px;
-  border-radius: 10px;
+  padding: 14px;
+  border-radius: 8px;
   margin-bottom: 10px;
+  font-size: 14px;
 }
 
 /* PLANOS */
 .plan {
   background: #112a5c;
   border-radius: 10px;
-  padding: 20px;
+  padding: 18px;
   margin-top: 15px;
 }
 
 .plan h3 {
   color: #ffd700;
+  margin-bottom: 10px;
 }
 
 .plan ul {
-  padding-left: 20px;
+  padding-left: 18px;
 }
 
 .plan li {
-  margin: 5px 0;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+/* DESTAQUE (PLANO MELHOR) */
+.highlight {
+  border: 2px solid #ffd700;
 }
 
 /* CTA FINAL */
@@ -96,32 +121,34 @@ body {
 }
 
 .cta img {
-  width: 100px;
+  width: 90px;
   border-radius: 50%;
+  margin-bottom: 10px;
 }
 
 /* WHATSAPP FIXO */
 .whatsapp {
   position: fixed;
   bottom: 15px;
-  left: 15px;
-  right: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 500px;
   background: #25d366;
-  text-align: center;
   padding: 15px;
   border-radius: 10px;
+  text-align: center;
   font-weight: bold;
   text-decoration: none;
   color: #fff;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
 
-/* DESKTOP */
-@media(min-width: 768px){
-  .container {
-    max-width: 900px;
-    margin: auto;
-  }
+/* ESPAÇO PARA BOTÃO */
+body {
+  padding-bottom: 80px;
 }
+
 </style>
 </head>
 
@@ -136,7 +163,7 @@ body {
     <p>A partir de R$ 29,99/mês</p>
 
     <a class="btn" href="https://wa.me/5521982323081?text=Olá Roberta, quero saber mais">
-      Falar no WhatsApp
+      Falar com a Roberta
     </a>
   </div>
 
@@ -144,7 +171,7 @@ body {
   <div class="benefits">
     <div class="benefit">✔ Seguro de vida até R$120 mil</div>
     <div class="benefit">✔ Assistência funeral completa</div>
-    <div class="benefit">✔ Cobertura familiar</div>
+    <div class="benefit">✔ Cobertura para toda família</div>
     <div class="benefit">✔ Sorteios mensais de R$10 mil</div>
   </div>
 
@@ -157,8 +184,8 @@ body {
     </ul>
   </div>
 
-  <div class="plan">
-    <h3>Plano Superior</h3>
+  <div class="plan highlight">
+    <h3>Plano Superior ⭐</h3>
     <ul>
       <li>Assistência Funeral</li>
       <li>Cremação</li>
