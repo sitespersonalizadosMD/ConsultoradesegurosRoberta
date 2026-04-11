@@ -177,28 +177,57 @@ body {
 
   <!-- PLANOS -->
   <div class="plan">
-    <h3>Plano Especial</h3>
-    <ul>
-      <li>Assistência Funeral</li>
-      <li>Capital: R$ 6.160</li>
+    <h3 onclick="togglePlano('especial')" style="cursor:pointer;">Plano Especial ⬇</h3>
+    <ul id="especial" style="display:none;">
+      <li>Assistência 24h</li>
+      <li>Urna funerária simples</li>
+      <li>Ornamentação</li>
+      <li>Uma coroa de flores</li>
+      <li>Translado</li>
+      <li>Locação de capela</li>
+      <li>Sepultura: cova simples ou gaveta</li>
+      <li>Registro de óbito</li>
+      <li>Taxas (sepultamento)</li>
+      <li>Reembolso</li>
+      <li><strong>Importância segurada: R$ 6.160,00</strong></li>
     </ul>
   </div>
 
   <div class="plan highlight">
-    <h3>Plano Superior ⭐</h3>
-    <ul>
-      <li>Assistência Funeral</li>
+    <h3 onclick="togglePlano('superior')" style="cursor:pointer;">Plano Superior ⭐ ⬇</h3>
+    <ul id="superior" style="display:none;">
+      <li>Assistência 24h</li>
+      <li>Urna funerária superior</li>
+      <li>Tanatopraxia</li>
+      <li>Ornamentação</li>
+      <li>Uma coroa de flores</li>
+      <li>Translado</li>
+      <li>Locação de capela</li>
+      <li>Sepultura: gaveta ou carneiro</li>
       <li>Cremação</li>
-      <li>Capital: R$ 10.000</li>
+      <li>Registro de óbito</li>
+      <li>Taxas (sepultamento ou cremação)</li>
+      <li>Reembolso</li>
+      <li><strong>Importância segurada: R$ 6.820,00</strong></li>
     </ul>
   </div>
 
   <div class="plan">
-    <h3>Plano Luxo</h3>
-    <ul>
-      <li>Assistência Funeral</li>
+    <h3 onclick="togglePlano('luxo')" style="cursor:pointer;">Plano Luxo ⬇</h3>
+    <ul id="luxo" style="display:none;">
+      <li>Assistência 24h</li>
+      <li>Urna funerária luxo</li>
+      <li>Tanatopraxia</li>
+      <li>Ornamentação</li>
+      <li>Duas coroas de flores</li>
+      <li>Translado</li>
+      <li>Locação de capela</li>
+      <li>Sepultura: gaveta ou carneiro</li>
       <li>Cremação</li>
-      <li>Capital: R$ 15.000</li>
+      <li>Registro de óbito</li>
+      <li>Taxas (sepultamento ou cremação)</li>
+      <li>Reembolso</li>
+      <li><strong>Importância segurada: R$ 8.870,00</strong></li>
     </ul>
   </div>
 
@@ -214,6 +243,13 @@ body {
 <a class="whatsapp" href="https://wa.me/5521982323081?text=Olá Roberta, quero contratar">
   💬 Falar com a Roberta agora
 </a>
+
+<script>
+function togglePlano(id) {
+  const el = document.getElementById(id);
+  el.style.display = el.style.display === "none" ? "block" : "none";
+}
+</script>
 
 </body>
 </html>
