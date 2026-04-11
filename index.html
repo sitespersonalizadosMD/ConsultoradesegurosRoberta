@@ -127,19 +127,17 @@ html, body {
 /* WHATSAPP FIXO */
 .whatsapp {
   position: fixed;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 500px;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
   background: #25d366;
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
-  font-weight: bold;
-  text-decoration: none;
-  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  text-decoration: none;
 }
 
 /* ESPAÇO PARA BOTÃO */
@@ -410,9 +408,10 @@ background: #000;
 
 <!-- BOTÃO FIXO -->
 <a class="whatsapp" href="https://wa.me/5521982323081?text=Olá Roberta, quero contratar">
-  💬 Falar com a Roberta agora
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" 
+       alt="WhatsApp" 
+       style="width:30px; height:30px;">
 </a>
-
 <script>
 function togglePlano(id) {
   const el = document.getElementById(id);
