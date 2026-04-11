@@ -109,11 +109,6 @@ html, body {
   font-size: 14px;
 }
 
-/* DESTAQUE (PLANO MELHOR) */
-.highlight {
-  border: 2px solid #ffd700;
-}
-
 /* CTA FINAL */
 .cta {
   text-align: center;
@@ -190,6 +185,10 @@ background: #000;
     </a>
   </div>
 
+  <div style="text-align:center; margin-top:20px; font-size:13px; color:#ccc;">
+  Clique no plano e conheça os benefícios 👇
+</div>
+
   <!-- BENEFÍCIOS -->
   <div class="benefits">
     <div class="benefit">✔ Seguro de vida até R$120 mil</div>
@@ -201,7 +200,7 @@ background: #000;
 
   <!-- PLANOS -->
   <div class="plan">
-    <h3 onclick="togglePlano('especial')" style="cursor:pointer;">Plano Especial ⬇</h3>
+    <h3 onclick="togglePlano('especial')" style="cursor:pointer;">Plano Especial </h3>
     <ul id="especial" style="display:none;">
       <li>Assistência 24h</li>
       <li>Urna funerária simples</li>
@@ -218,7 +217,7 @@ background: #000;
   </div>
 
   <div class="plan highlight">
-    <h3 onclick="togglePlano('superior')" style="cursor:pointer;">Plano Superior ⭐ ⬇</h3>
+    <h3 onclick="togglePlano('superior')" style="cursor:pointer;">Plano Superior </h3>
     <ul id="superior" style="display:none;">
       <li>Assistência 24h</li>
       <li>Urna funerária superior</li>
@@ -237,7 +236,7 @@ background: #000;
   </div>
 
   <div class="plan">
-    <h3 onclick="togglePlano('luxo')" style="cursor:pointer;">Plano Luxo ⬇</h3>
+    <h3 onclick="togglePlano('luxo')" style="cursor:pointer;">Plano Luxo </h3>
     <ul id="luxo" style="display:none;">
       <li>Assistência 24h</li>
       <li>Urna funerária luxo</li>
@@ -414,9 +413,20 @@ background: #000;
 <script>
 function togglePlano(id) {
   const el = document.getElementById(id);
-  el.style.display = el.style.display === "none" ? "block" : "none";
+
+  if (el.style.display === "block") {
+    el.style.maxHeight = "0px";
+    setTimeout(() => {
+      el.style.display = "none";
+    }, 300);
+  } else {
+    el.style.display = "block";
+    el.style.maxHeight = "0px";
+    setTimeout(() => {
+      el.style.maxHeight = el.scrollHeight + "px";
+    }, 10);
+  }
 }
-  
 </script>
 <script>
 let index = 0;
