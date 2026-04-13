@@ -400,16 +400,17 @@ background: #000;
   </h3>
 
   <select id="plano" style="width:100%; padding:10px; border-radius:6px; margin-bottom:10px;">
-    <h3 style="color:#ffd700; margin:10px 0;">Qual sua idade?</h3>
+  <option value="">Selecione um plano</option>
+  <option>Plano Especial</option>
+  <option>Plano Superior</option>
+  <option>Plano Luxo</option>
+</select>
+
+<h3 style="color:#ffd700; margin:10px 0;">Qual sua idade?</h3>
 
 <input type="number" id="idadeTitular" placeholder="Digite sua idade"
   style="width:100%; padding:10px; border-radius:6px; margin-bottom:10px;">
-    <option value="">Selecione um plano</option>
-    <option>Plano Especial</option>
-    <option>Plano Superior</option>
-    <option>Plano Luxo</option>
-  </select>
-
+  
   <h3 style="color:#ffd700; margin:10px 0;">Terá dependentes?</h3>
 
   <select id="dependentes" onchange="toggleDependentes()" style="width:100%; padding:10px; border-radius:6px;">
