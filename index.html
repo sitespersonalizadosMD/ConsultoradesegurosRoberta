@@ -415,18 +415,29 @@ background: #000;
     <option value="Sim">Sim</option>
   </select>
 
-  <div id="boxDependentes" style="display:none; margin-top:10px;">
-    <label>Quem são os dependentes?</label>
-    <select id="parentesco" style="width:100%; padding:10px; border-radius:6px;">
+ <div id="boxDependentes" style="display:none; margin-top:10px;">
+  <label>Quem são os dependentes?</label>
+
+  <div id="listaDependentes">
+    <select class="dependente" style="width:100%; padding:10px; border-radius:6px; margin-bottom:10px;">
+      <option value="">Selecione</option>
       <option>Esposa(o)</option>
       <option>Filho(a)</option>
       <option>Pai</option>
       <option>Mãe</option>
       <option>Irmão(ã)</option>
       <option>Sogro(a)</option>
+      <option>Avô/Avó</option>
+      <option>Neto(a)</option>
       <option>Outro</option>
     </select>
   </div>
+
+  <button onclick="adicionarDependente()" 
+    style="margin-top:5px; padding:8px; width:100%; border:none; border-radius:6px; background:#ffd700; color:#0b1c3d; font-weight:600;">
+    + Adicionar outro dependente
+  </button>
+</div>
 
   <h3 style="color:#ffd700; margin:10px 0;">Qual sua renda mensal?</h3>
 
