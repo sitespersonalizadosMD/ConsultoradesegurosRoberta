@@ -417,17 +417,15 @@ background: #000;
   </select>
 
   <div id="boxDependentes" style="display:none; margin-top:10px;">
-    <label>Quem são os dependentes?</label>
-    <select id="parentesco" style="width:100%; padding:10px; border-radius:6px;">
-      <option>Esposa(o)</option>
-      <option>Filho(a)</option>
-      <option>Pai</option>
-      <option>Mãe</option>
-      <option>Irmão(ã)</option>
-      <option>Sogro(a)</option>
-      <option>Outro</option>
-    </select>
-  </div>
+  <label>Dependentes:</label>
+
+  <div id="listaDependentes"></div>
+
+  <button type="button" onclick="addDependente()" 
+    style="margin-top:10px; padding:10px; width:100%; border:none; border-radius:6px; background:#ffd700; font-weight:600;">
+    + Adicionar dependente
+  </button>
+</div>
 
   <h3 style="color:#ffd700; margin:10px 0;">Qual sua renda mensal?</h3>
 
@@ -496,7 +494,7 @@ function toggleDependentes() {
 function enviarWhatsApp() {
   const plano = document.getElementById("plano").value;
   const dependentes = document.getElementById("dependentes").value;
-  const parentesco = document.getElementById("parentesco").value;
+  const dependentesList = document.querySelectorAll("#listaDependentes select");
   const renda = document.getElementById("renda").value;
 
   let mensagem = `Olá Roberta! Quero contratar um plano.%0A%0A`;
@@ -504,10 +502,12 @@ function enviarWhatsApp() {
   mensagem += `Plano escolhido: ${plano || "Não informado"}%0A`;
   mensagem += `Possui dependentes: ${dependentes || "Não informado"}%0A`;
 
-  if (dependentes === "Sim") {
-    mensagem += `Dependentes: ${parentesco}%0A`;
-  }
-
+ if (dependentes === "Sim" && dependentesList.length > 0) {
+  mensagem += `Dependentes:%0A`;
+  dependentesList.forEach((dep, i) => {
+    mensagem += `- ${dep.value}%0A`;
+  });
+}
   mensagem += `Renda mensal: ${renda || "Não informado"}`;
 
   const telefone = "5521982323081";
@@ -515,6 +515,23 @@ function enviarWhatsApp() {
   window.open(`https://wa.me/${telefone}?text=${mensagem}`, "_blank");
 }
 </script>
+  function addDependente() {
+  const container = document.getElementById("listaDependentes");
+
+  const select = document.createElement("select");
+  select.style = "width:100%; padding:10px; border-radius:6px; margin-top:8px;";
   
+  select.innerHTML = `
+    <option>Esposa(o)</option>
+    <option>Filho(a)</option>
+    <option>Pai</option>
+    <option>Mãe</option>
+    <option>Irmão(ã)</option>
+    <option>Sogro(a)</option>
+    <option>Outro</option>
+  `;
+
+  container.appendChild(select);
+}
 </body>
 </html>
