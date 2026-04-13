@@ -515,7 +515,9 @@ function enviarWhatsApp() {
   window.open(`https://wa.me/${telefone}?text=${mensagem}`, "_blank");
 }
 </script>
-  function addDependente() {
+
+<script>
+function addDependente() {
   const container = document.getElementById("listaDependentes");
 
   const select = document.createElement("select");
@@ -533,5 +535,7 @@ function enviarWhatsApp() {
 
   container.appendChild(select);
 }
+</script>
+
 </body>
 </html>
