@@ -492,7 +492,7 @@ function toggleDependentes() {
 function enviarWhatsApp() {
   const plano = document.getElementById("plano").value;
   const dependentes = document.getElementById("dependentes").value;
-  const dependentesList = document.querySelectorAll("#listaDependentes select");
+  const dependentesList = document.querySelectorAll("#listaDependentes div");
   const renda = document.getElementById("renda").value;
 
   let mensagem = `Olá Roberta! Quero contratar um plano.%0A%0A`;
@@ -502,9 +502,17 @@ function enviarWhatsApp() {
 
  if (dependentes === "Sim" && dependentesList.length > 0) {
   mensagem += `Dependentes:%0A`;
-  dependentesList.forEach((dep, i) => {
-    mensagem += `- ${dep.value}%0A`;
-  });
+ dependentesList.forEach((dep) => {
+  const tipo = dep.querySelector("select").value;
+  const idade = dep.querySelector("input").value;
+
+  if (idade === "") {
+    alert("Preencha a idade de todos os dependentes!");
+    throw new Error("Idade não preenchida");
+  }
+
+  mensagem += `- ${tipo} (${idade} anos)%0A`;
+});
 }
   mensagem += `Renda mensal: ${renda || "Não informado"}`;
 
@@ -518,24 +526,29 @@ function enviarWhatsApp() {
 function addDependente() {
   const container = document.getElementById("listaDependentes");
 
-  const select = document.createElement("select");
-  select.style = "width:100%; padding:10px; border-radius:6px; margin-top:8px;";
-  
-  select.innerHTML = `
-    <option>Pai</option>
-    <option>Mãe</option>
-    <option>Titular</option>
-    <option>Cônjugue</option>
-    <option>Filho(a)</option>
-    <option>Genro</option>
-    <option>Nora</option>
-    <option>Sogro(a)</option>
-    <option>Neto(a)</option>
-    <option>Bisneto(a)</option>
-    <option>Irmão(a)</option>
+  const div = document.createElement("div");
+  div.style = "display:flex; gap:10px; margin-top:8px;";
+
+  div.innerHTML = `
+    <select style="flex:1; padding:10px; border-radius:6px;">
+      <option>Pai</option>
+      <option>Mãe</option>
+      <option>Titular</option>
+      <option>Cônjuge</option>
+      <option>Filho(a)</option>
+      <option>Genro</option>
+      <option>Nora</option>
+      <option>Sogro(a)</option>
+      <option>Neto(a)</option>
+      <option>Bisneto(a)</option>
+      <option>Irmão(a)</option>
+    </select>
+
+    <input type="number" placeholder="Idade"
+      style="width:80px; padding:10px; border-radius:6px;">
   `;
 
-  container.appendChild(select);
+  container.appendChild(div);
 }
 </script>
 
