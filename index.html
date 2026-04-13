@@ -504,7 +504,10 @@ function toggleDependentes() {
 function enviarWhatsApp() {
   const plano = document.getElementById("plano").value;
   const dependentes = document.getElementById("dependentes").value;
-  const parentesco = document.getElementById("parentesco").value;
+  const checkboxes = document.querySelectorAll('#boxDependentes input[type="checkbox"]:checked');
+
+let parentescos = [];
+checkboxes.forEach(cb => parentescos.push(cb.value));
   const renda = document.getElementById("renda").value;
 
   let mensagem = `Olá Roberta! Quero contratar um plano.%0A%0A`;
@@ -513,7 +516,7 @@ function enviarWhatsApp() {
   mensagem += `Possui dependentes: ${dependentes || "Não informado"}%0A`;
 
   if (dependentes === "Sim") {
-    mensagem += `Dependentes: ${parentesco}%0A`;
+    mensagem += `Dependentes: ${parentescos.join(", ") || "Não informado"}%0A`;
   }
 
   mensagem += `Renda mensal: ${renda || "Não informado"}`;
