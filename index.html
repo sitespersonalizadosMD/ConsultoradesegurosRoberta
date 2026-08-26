@@ -194,6 +194,58 @@ background: #000;
 </style>
 </head>
 
+  <style>
+#bloqueio-pagamento {
+  position: fixed;
+  inset: 0;
+  background: #0b1c3d;
+  color: #ffffff;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.bloqueio-box {
+  max-width: 500px;
+  padding: 35px 25px;
+  border: 1px solid #ffd700;
+  border-radius: 15px;
+  background: #112a5c;
+}
+
+.bloqueio-box h1 {
+  color: #ffd700;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.bloqueio-box p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.bloqueio-box small {
+  color: #cccccc;
+}
+</style>
+
+<div id="bloqueio-pagamento">
+  <div class="bloqueio-box">
+    <h1>Site temporariamente indisponível</h1>
+
+    <p>
+      Este site encontra-se temporariamente indisponível.
+      Para mais informações, entre em contato com o responsável.
+    </p>
+
+    <small>© 2026 MDR Sites Personalizados</small>
+  </div>
+</div>
+
 <body>
 
 <div class="container">
